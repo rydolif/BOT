@@ -2,6 +2,33 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
+	//----------------------typePassword-----------------------
+	const typePassword = (typeSelector) => {
+		let type = document.querySelectorAll(typeSelector);
+
+		type.forEach(item => {
+			let buttonSelector = item.querySelector('button');
+			let inputSelector = item.querySelector('input');
+
+			buttonSelector.addEventListener('click', function(e) {
+					e.preventDefault();
+					buttonSelector.classList.toggle('hidden');
+					inputSelector.setAttribute('type', 'password');
+					inputSelector.classList.toggle('text');
+
+					let classText = item.querySelector('.text');
+
+					if (classText) {
+						item.querySelector('.text').setAttribute('type', 'text');
+					}
+
+
+			});
+		});
+	};
+	typePassword('.typePassword');
+
+
 	//----------------------SLIDER-hero----------------------
 		// var mySwiper = new Swiper('.hero__slider', {
 		// 	slidesPerView: 1,
@@ -135,172 +162,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		// };
 		// modals('.modal');
-
-	//----------------------FORM-----------------------
-		const forms = (formsSelector) => {
-			const form = document.querySelectorAll(formsSelector);
-			let i = 1;
-			let img = 1;
-			let lebel = 1;
-			let prev = 1;
-
-			form.forEach(item => {
-				const elem = 'form--' + i++;
-				item.classList.add(elem);
-
-				let formId = item.id = (elem);
-				let formParent = document.querySelector('#' + formId);
-
-				formParent.addEventListener('submit', formSend);
-
-				async function formSend(e) {
-					e.preventDefault();
-			
-					let error = formValidate(item);
-			
-					let formData = new FormData(item);
-					formData.append('image', formImageAdd.files[0]);
-
-					if (error === 0) {
-						item.classList.add('_sending');
-						let response = await fetch('sendmail.php', {
-							method: 'POST',
-							body: formData
-						});
-			
-						if (response.ok) {
-							let modalThanks = document.querySelector('#modal--thanks');
-							formParent.parentNode.style.display = 'none';
-
-							modalThanks.style.display = 'flex';
-							document.body.classList.add('modal--open');
-							formPreview.innerHTML = '';
-							item.reset();
-							item.classList.remove('_sending');
-						} else {
-							alert('Ошибка при отправке');
-							item.classList.remove('_sending');
-						}
-			
-					}
-				}
-			
-				function formValidate(item) {
-					let error = 0;
-					let formReq = formParent.querySelectorAll('._req');
-
-					for (let index = 0; index < formReq.length; index++) {
-						const input = formReq[index];
-						// formRemoveError(input);
-			
-						if (input.classList.contains('_email')) {
-							if(emailTest(input)) {
-								formAddErrorEmail(input);
-								error++;
-							}
-						} else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
-							formAddErrorCheck(input);
-							error++;
-						} else {
-							if (input.value === '') {
-								formAddError(input);
-								error++;
-							}
-						}
-					}
-					return error;
-				}
-
-				const formImgFile = formParent.querySelectorAll('.formImgFile');
-				// console.log(formImgFile);
-
-				formImgFile.forEach(item => { 
-					const elem = 'formImgFile--' + i++;
-
-					let formId = item.id = (elem);
-					let formParent = document.querySelector('#' + formId);
-
-					const formImage = formParent.querySelector('.formImage');
-					const formLebel = formParent.querySelector('.formLebel');
-					const formPreview = formParent.querySelector('.formPreview');
-
-					//картинка в форме
-					let formImageNumber = 'formImage--' + img++;
-					let formPreviewNumber = 'formPreview--' + prev++;
-					
-					formImage.id = (formImageNumber);
-					formLebel.htmlFor = ('formImage--' + lebel++);
-					formPreview.id = (formPreviewNumber);
-					console.log(formPreview);
-					const formImageAdd = document.querySelector('#' + formImageNumber);
-
-					// изменения в инпуте файл
-					formImageAdd.addEventListener('change', () =>  {
-						uploadFile(formImage.files[0]);
-					});
-
-					function uploadFile(file) {
-				
-						if (!['image/jpeg', 'image/png', 'image/gif', 'image/ico'].includes(file.type)) {
-							alert('Только изображения');
-							formImage.value = '';
-							return;
-						}
-				
-						if (file.size > 2 * 1024 * 1024) {
-							alert('Размер менее 2 мб.');
-							return;
-						}
-				
-						var reader = new FileReader();
-						reader.onload = function (e) {
-							formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
-						};
-						reader.onerror = function (e) {
-							alert('Ошибка');
-						};
-						reader.readAsDataURL(file);
-					}
-				})
-
-			
-				function formAddError(input) {
-					let div = document.createElement('div');
-					div.classList.add("form__error");
-					div.innerHTML = "Введите данные в поле";
-
-					input.parentElement.append(div);
-					input.parentElement.classList.add('_error');
-					input.classList.add('_error');
-				}
-			
-				function formAddErrorEmail(input) {
-					let div = document.createElement('div');
-					div.classList.add("form__error");
-					div.innerHTML = "Введите свою почту";
-
-					input.parentElement.append(div);
-					input.parentElement.classList.add('_error');
-					input.classList.add('_error');
-				}
-			
-				function formAddErrorCheck(input) {
-					let div = document.createElement('div');
-					div.classList.add("form__error");
-					div.innerHTML = "Согласие на обработку персональных данных";
-
-					input.parentElement.append(div);
-					input.parentElement.classList.add('_error');
-					input.classList.add('_error');
-				}
-			
-				function emailTest(input) {
-					return !/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/. test(input.value);
-				}
-
-			});
-		};
-		forms('.form');
 
 	//----------------------ADD-INPUT-----------------------
 		const adminAdd = (adminAddInput) => {
