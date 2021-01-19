@@ -38,7 +38,6 @@
 
 // -----BUTTON-----
 .btn
-	+transition
 	position: relative
 	display: flex
 	justify-content: center
@@ -414,6 +413,12 @@
 			border: 0
 			background-color: transparent
 			z-index: 10
+
+			&:hover
+				transform: translate(0, -50%) scale(1.1)
+
+			&:active
+				transform: translate(0, -50%) scale(.9)
 
 		.hidden
 			background-image: url(../img/hidden.svg)
