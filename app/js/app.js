@@ -100,41 +100,41 @@ document.addEventListener("DOMContentLoaded", function() {
 		// hamburger('.hamburger', '.header__nav', '.header');
 		
 	//----------------------MODAL-----------------------
-		const modals = (modalSelector) => {
-			const	modal = document.querySelectorAll(modalSelector);
+		// const modals = (modalSelector) => {
+		// 	const	modal = document.querySelectorAll(modalSelector);
 
-			if (modal) {
-				let i = 1;
+		// 	if (modal) {
+		// 		let i = 1;
 
-				modal.forEach(item => {
-					const wrap = item.id;
-					const link = document.querySelector('.' + wrap);
-					let close = item.querySelector('.close');
+		// 		modal.forEach(item => {
+		// 			const wrap = item.id;
+		// 			const link = document.querySelector('.' + wrap);
+		// 			let close = item.querySelector('.close');
 
-					link.addEventListener('click', (e) => {
-						if (e.target) {
-							e.preventDefault();
-						}
-						item.style.display = 'flex';
-						document.body.classList.add('modal--open')
-					});
+		// 			link.addEventListener('click', (e) => {
+		// 				if (e.target) {
+		// 					e.preventDefault();
+		// 				}
+		// 				item.style.display = 'flex';
+		// 				document.body.classList.add('modal--open')
+		// 			});
 
-					close.addEventListener('click', () => {
-						item.style.display = 'none';
-						document.body.classList.remove('modal--open');
-					});
+		// 			close.addEventListener('click', () => {
+		// 				item.style.display = 'none';
+		// 				document.body.classList.remove('modal--open');
+		// 			});
 
-					item.addEventListener('click', (e) => {
-						if (e.target === item) {
-							item.style.display = 'none';
-							document.body.classList.remove('modal--open');
-						}
-					});
-				});
-			}
+		// 			item.addEventListener('click', (e) => {
+		// 				if (e.target === item) {
+		// 					item.style.display = 'none';
+		// 					document.body.classList.remove('modal--open');
+		// 				}
+		// 			});
+		// 		});
+		// 	}
 
-		};
-		modals('.modal');
+		// };
+		// modals('.modal');
 
 	//----------------------FORM-----------------------
 		const forms = (formsSelector) => {

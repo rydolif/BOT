@@ -1,5 +1,22 @@
 @import base
 
+@keyframes robot
+	0%
+		top: 350%
+	40%
+		top: 15%
+	100%
+		top: 50%
+
+@keyframes robot--img
+	0%
+		transform: translate(0, 6%)
+	50%
+		transform: translate(0, -2%)
+	100%
+		transform: translate(0, 6%)
+
+
 // -----CONTAINER-----
 .container
 	width: 100%
@@ -208,9 +225,11 @@
 	color: #ffffff
 	overflow: hidden
 
+	+r(767)
+		align-items: flex-start
+
 	+r(576)
 		padding: 40% 0
-		align-items: flex-start
 
 	&__container
 		position: relative
@@ -238,13 +257,13 @@
 			font-size: 18px
 
 	&__img
-		+tansition
 		position: absolute
 		left: 45%
 		top: 50%
 		transform: translate(0, -50%)
 		z-index: -1
 		max-height: 100vh
+		animation: 4s ease robot
 
 		+r(1200)
 			left: 40%
@@ -253,17 +272,18 @@
 			left: 50%
 
 		+r(767)
-			top: 90%
 			left: 50%
-			transform: translate(-50%, 0)
+			transform: translate(-50%, 20%)
 
 		img
+			animation: 6s ease infinite robot--img
+
 			+r(992)
 				max-height: 50vh
 
 			+r(767)
 				height: 70vh
-
+				margin-top: 40px
 
 .login
 	margin: 0 auto
