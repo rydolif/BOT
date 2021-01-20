@@ -93,6 +93,12 @@
 	&--center
 		margin: 0 auto
 
+	&:disabled
+		background: #EFEFF2
+		box-shadow: 0 0 0 0 rgba($accent, 1)
+		border-color: #EFEFF2
+		color: #ffffff
+
 // -----HAMBURGER-----
 .hamburger
 	position: relative
@@ -715,8 +721,15 @@
 			+r(576)
 				border-radius: 25px 0px 0px 25px
 
+		&--left
+			&::before
+				left: 26%
+				
+				+r(1200)
+					left: 0
+
 	&__wrap
-		padding: 30px
+		padding: 40px 30px 30px
 		display: flex
 		flex-direction: column
 		justify-content: space-between
@@ -1089,7 +1102,143 @@
 			path
 				fill: #9F9FAD
 
+	&__form
+		margin-bottom: 40px
 
+		+r(992)
+			margin-bottom: 30px
+
+		input
+			background-color: #fff
+			border: 1px solid #E5E5ED
+			width: 70%
+			color: $text
+			padding: 0 40px
+
+			+r(1200)
+				padding: 0 30px
+
+			+r(992)
+				padding: 0 20px
+
+			+r(480)
+				width: 100%
+
+			&::placeholder
+				color: #9f9fad
+
+			&:hover
+				border-color: $accent
+		
+		label
+			width: 20%
+			color: #9f9fad
+			margin-bottom: 0
+
+			+r(576)
+				font-size: 12px
+
+			+r(480)
+				display: none
+
+		&_title
+			margin-left: 30%
+			margin-bottom: 35px
+			text-transform: uppercase
+			font-weight: 700
+
+			+r(992)
+				margin-bottom: 20px
+
+			+r(480)
+				margin-left: 0
+				margin-bottom: 10px
+
+		&_line
+			display: flex
+			align-items: center
+			justify-content: space-between
+			flex-wrap: wrap
+			margin-bottom: 15px
+
+			+r(992)
+				margin-bottom: 10px
+
+			&:last-child
+				margin-bottom: 0
+
+		&_btn
+			display: flex
+			justify-content: flex-end
+			margin-top: 35px
+
+			+r(992)
+				margin-top: 20px
+
+			+r(480)
+				margin-top: 10px
+
+		.typePassword
+			button
+				background-image: url(../img/visible-gray.svg)
+
+			.hidden
+				background-image: url(../img/hidden-gray.svg)
+
+		&_checkbox
+			width: 70%
+
+			+r(480)
+				width: 100%
+
+			label
+				position: relative
+				padding-left: 45px
+				cursor: pointer
+				margin-bottom: 0
+				margin-right: 0
+				width: auto
+				color: $text
+				text-transform: uppercase
+				display: block !important
+
+				+r(1200)
+					padding-left: 30px
+
+				&::before,
+				&::after
+					+transition
+					content: ''
+					position: absolute
+					top: -2px
+					left: 0
+					display: block
+
+				&::before
+					width: 22px
+					height: 22px
+					border-radius: 50%
+					border: 6px solid $accent
+
+				&::after
+					width: 22px
+					height: 22px
+					border-radius: 50%
+					background: $accent
+					left: 0px
+
+			input[type="checkbox"]
+				display: none
+
+			input[type="checkbox"]:checked + label::after
+				transform: scale(0)
+
+			input[type="checkbox"] + label::after
+				transform: scale(1)
+
+
+.typePassword
+	@extend .login__pass
 
 
 

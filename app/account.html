@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Чат</title>
+	<title>Аккаунт</title>
 	<meta name="description" content="Startup HTML Optimized">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" href="img/favicon.png">
@@ -60,7 +60,7 @@
 				</svg>
 			</span>
 		</a>
-		<a href="#" class="nav__active">
+		<a href="#">
 			<p>Оплата</p>
 			<span>
 				<svg width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@
 				</svg>
 			</span>
 		</a>
-		<a href="#">
+		<a href="#" class="nav__active">
 			<p>Aккаунт</p>
 			<span>
 				<svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,67 +89,61 @@
 	<section class="section">
 		<div class="container">
 
-			<div class="section__container section__bg">
+			<div class="section__container section__bg section__bg--left">
 				<div class="section__wrap">
-					<h2 class="h2">Управление услугами</h2>
+					<h2 class="h2">Аккаунт</h2>
 
-					<div class="section__services">
-
-						<div class="section__services_item">
-							<div class="section__services_header">
-								<h3 class="h3">стартовый *</h3>
-								<p class="section__services_price">0 ₽</p>
-								<p class="section__services_date">в месяц</p>
-							</div>
-							<ul class="section__services_list">
-								<li>Максимальное количество ботов - 1</li>
-								<li>Длительность - 5 дней</li>
-								<li>Включено ЦРМ</li>
-							</ul>
-							<div class="section__services_footer">
-								<p class="section__services_date">
-									*этот тариф являеться стартовым <br> и активируеться сразу после регистрации
-								</p>
-								<p class="section__services_connected">вы подключены к этому тарифу</p>
-							</div>
+					<form action="#" class="section__form">
+						<div class="section__form_title">
+							<p>Данные профиля</p>
 						</div>
-
-						<div class="section__services_item">
-							<div class="section__services_header">
-								<h3 class="h3">Базовый</h3>
-								<p class="section__services_price">450 ₽</p>
-								<p class="section__services_date">в месяц</p>
-							</div>
-							<ul class="section__services_list">
-								<li>Максимальное количество ботов - 5</li>
-								<li>Длительность - 14 дней</li>
-								<li>Включено ЦРМ</li>
-								<li>Копирование ботов и групп</li>
-							</ul>
-							<div class="section__services_footer">
-								<a href="#" class="btn btn--accent btn--center">Подключить</a>
-							</div>
+						<div class="section__form_line">
+							<label for="name">Имя</label>
+							<input id="name" type="text" placeholder="Имя">
 						</div>
-
-						<div class="section__services_item">
-							<div class="section__services_header">
-								<h3 class="h3">pro</h3>
-								<p class="section__services_price">999 ₽</p>
-								<p class="section__services_date">в месяц</p>
-							</div>
-							<ul class="section__services_list">
-								<li>Максимальное количество ботов - 20</li>
-								<li>Длительность - 14 дней</li>
-								<li>Включено ЦРМ</li>
-								<li>Копирование ботов и групп</li>
-								<li>Montes, aliquam blandit lacus, ac</li>
-							</ul>
-							<div class="section__services_footer">
-								<a href="#" class="btn btn--accent btn--center">Подключить</a>
-							</div>
+						<div class="section__form_line">
+							<label for="mail">Еmail</label>
+							<input id="mail" type="email" placeholder="Еmail">
 						</div>
+						<div class="section__form_line">
+							<label for="tel">Телефон</label>
+							<input id="tel" type="tel" placeholder="Телефон">
+						</div>
+						<div class="section__form_btn">
+							<button class="btn btn--accent">Сохранить</button>
+						</div>
+					</form>
 
-					</div>
+					<form action="#" class="section__form">
+						<div class="section__form_title">
+							<p>Сменить пароль</p>
+						</div>
+						<div class="section__form_line typePassword">
+							<label for="pass">Старый пароль</label>
+							<input id="pass" type="password" placeholder="Старый пароль">
+							<button type="button"></button>
+						</div>
+						<div class="section__form_line typePassword">
+							<label for="pass-new">Новый пароль</label>
+							<input id="pass-new" type="password" placeholder="Новый пароль">
+							<button type="button"></button>
+						</div>
+						<div class="section__form_line typePassword">
+							<label for="pass-repeat">Повторите новый пароль</label>
+							<input id="pass-repeat" type="password" placeholder="Повторите новый пароль">
+							<button type="button"></button>
+						</div>
+					</form>
+
+					<form action="#" class="section__form">
+						<div class="section__form_line">
+							<label>Продление тарифа</label>
+							<p class="section__form_checkbox">
+								<input id="formCheckbox" type="checkbox">
+								<label for="formCheckbox">Автоматически продлевать текущий тариф (при наличии средств)</label>
+							</p>
+						</div>
+					</form>
 
 					<div class="section__footer">
 						<a href="#" class="section__footer_question">
