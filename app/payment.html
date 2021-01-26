@@ -108,7 +108,7 @@
 								</svg>
 								<span>Вывести</span>
 							</a>
-							<a href="#">
+							<a href="#" class="modal__next">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M3 19H21V21H3V19ZM13 13.172L19.071 7.1L20.485 8.514L12 17L3.515 8.515L4.929 7.1L11 13.17V2H13V13.172Z" fill="#9F9FAD"/>
 								</svg>
@@ -234,8 +234,86 @@
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</section>
+
+	<div class="modal" id="modal__next">
+		<form action="#" class="modal__form form" method="POST">
+	
+			<button class="close modal__close" type="button">
+				<span></span>
+				<span></span>
+			</button>
+	
+				<h2 class="h2">Пополнить</h2>
+	
+				<input type="hidden" name="subject" value="Добавить елемент в слайдер">
+	
+				<div class="form__item">
+					<label for="formName" class="form__label">Имя*</label>
+					<input id="formName" type="text" name="name" placeholder="Имя" class="form__input _req">
+				</div>
+	
+				<div class="form__item">
+					<label for="formPhone" class="form__label">Телефон*</label>
+					<input id="formPhone" type="tel" name="phone" placeholder="Телефон" class="form__input _req">
+				</div>
+	
+				<div class="form__item">
+					<label for="formMail" class="form__label">Почта*</label>
+					<input id="formMail" type="email" name="mail" placeholder="Почта" class="form__input _req">
+				</div> 
+	
+				<div class="form__item">
+					<div class="form__label">Левша или правша?</div>
+					<div class="form__options">
+						<div class="form__options_item">
+							<input id="formRigth" type="radio" value="raight" name="hand" class="form__options_input" checked>
+							<label for="formRigth" class="form__options_label"><span>Правша</span></label>
+						</div>
+						<div class="form__options_item">
+							<input id="formLeft" type="radio" value="left" name="hand" class="form__options_input">
+							<label for="formLeft" class="form__options_label"><span>Левша</span></label>
+						</div>
+					</div>
+				</div>
+	
+				<div class="form__item">
+					<label for="formMessage" class="form__label">Сообщение</label>
+					<textarea name="message" id="formMessage" class="form__textarea"></textarea>
+				</div>
+	
+				<div class="form__item">
+					<div class="form__label">Возраст:</div>
+					<select name="age" id="formAge" class="form__select">
+						<option value="18" selected="selected">18</option>
+						<option value="25">25</option>
+						<option value="30">30</option>
+						<option value="50">50</option>
+					</select>
+				</div>
+
+				<div class="form__item">
+					<div class="form__checkbox">
+						<input id="formAgreement" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
+						<label for="formAgreement" class="form__checkbox_label"><span>Персональные данные <a href="#">Файл</a></span></label>
+					</div>
+				</div>
+	
+				<div class="form__btn">
+					<button type="submit" class="btn form__btn_button" name="submit">Отправить</button>
+				</div>
+	
+		</form>
+	</div>
+
+	<div class="error">
+		<p class="error__red">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		<p class="error__green">Dolore voluptatibus excepturi, ducimus enim id animi nisi.</p>
+		<p class="error__yellow">Quis nam in odio alias expedita eius, facilis suscipit architecto quas, vitae delectus perspiciatis?</p>
+	</div>
+
 
 </body>
 </html>
