@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				showTabContent();
 			
 				header.addEventListener('click', (e) => {
-					e.preventDefault();
+					// e.preventDefault();
 					const target = e.target;
 					if (target && 
 						(target.classList.contains(tabSelector.replace(/\./, '')) || 
@@ -109,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		};
 		modals('.modal');
-
 
 });
 	

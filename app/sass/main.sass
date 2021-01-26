@@ -1864,43 +1864,53 @@
 
 
 .toggle
+	position: relative
+	width: 36px
+	height: 20px
+	margin-right: 10px
+	padding: 5px
+	border: 1px solid #9f9fad
+	border-radius: 10px
+
 	input
 		display: none
 
-	.label
-		color: #404040
-		font-size: 14px
-		position: relative
-		padding-left: 50px
+	label
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
 		cursor: pointer
-		margin: 0
+		margin-bottom: 0
+		margin-right: 0
+		+transition
 
-		a
-			color: #404040
-			font-size: 14px
-			text-decoration: underline
+		&::before,
+		&::after
+			content: ''
+			position: absolute
+			left: 2px
+			top: 2px
+			+transition
 
 		&::before
-			content: ""
-			position: absolute
-			left: 20px
-			top: 50%
-			transition: all .3s
-			transform: translate(-50%, -50%)
-			width: 25px
-			height: 25px
-			border: 1px solid #d9d9d9
+			width: 14px
+			height: 14px
+			border-radius: 50%
+			background-color: #9f9fad
 
-		&__active
-			position: relative
-			&::after
-				content: url(../img/icon/check.svg)
-				position: absolute
-				left: 15px
-				top: 23px
-				width: 10px
-				height: 10px
-				transition: all .3s
+	input[type="checkbox"]
+		display: none
+
+	input[type="checkbox"]:checked + label::before
+		left: 18px
+		top: 2px
+		background-color: $accent
+
+	input[type="checkbox"] + label::before
+		left: 2px
+		top: 2px
 
 
 
