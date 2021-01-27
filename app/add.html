@@ -68,7 +68,7 @@
 				</svg>
 			</span>
 		</a>
-		<a href="account.html">
+		<a href="account.html" class="nav__active">
 			<p>Aккаунт</p>
 			<span>
 				<svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +76,7 @@
 				</svg>
 			</span>
 		</a>
-		<a href="services.html" class="nav__active">
+		<a href="services.html">
 			<p>Управление услугами</p>
 			<span>
 				<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,14 +89,19 @@
 	<section class="section">
 		<div class="container">
 
-			<div class="section__container section__bg">
+			<div class="section__container section__bg section__bg--left">
 				<div class="section__wrap">
-					<h2 class="h2">Управление услугами</h2>
+					<h2 class="h2">Аккаунт</h2>
 
-					<form action="#" class="add">
-
-						<p class="login__pass typePassword">
-							<span data-info="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, impedit!">
+					<form action="#" class="section__form add">
+						<div class="section__form_title">
+							<p>Данные профиля</p>
+						</div>
+						<div class="section__form_line typePassword">
+							<label>Токен бота</label>
+							<input type="password" placeholder="Токен бота">
+							<button type="button"></button>
+							<span class="add__info" data-info="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, impedit!">
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									width="45.999px" height="45.999px" viewBox="0 0 45.999 45.999" style="enable-background:new 0 0 45.999 45.999;"
 									xml:space="preserve">
@@ -110,11 +115,10 @@
 									</g>
 								</svg>
 							</span>
-							<input type="password" placeholder="Токен бота">
-							<button type="button"></button>
-						</p>
-						<p class="login__pass typePassword">
-							<span data-info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit recusandae in, necessitatibus esse eum ipsum ipsa repellat quis maiores rem dignissimos consectetur pariatur doloremque dolores nisi harum odit facere et.">
+						</div>
+						<div class="section__form_line typePassword">
+							<label>ID паблика</label>
+							<span  class="add__info" data-info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit recusandae in, necessitatibus esse eum ipsum ipsa repellat quis maiores rem dignissimos consectetur pariatur doloremque dolores nisi harum odit facere et.">
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									width="45.999px" height="45.999px" viewBox="0 0 45.999 45.999" style="enable-background:new 0 0 45.999 45.999;"
 									xml:space="preserve">
@@ -130,28 +134,34 @@
 							</span>
 							<input type="password" placeholder="ID паблика">
 							<button type="button"></button>
-						</p>
-						<p class="login__remember">
-							<input type="checkbox" id="dop1" checked>
-							<label for="dop1">Доп. функция 1</label>
-						</p>
-						<p class="login__remember">
-							<input type="checkbox" id="dop2" checked>
-							<label for="dop2">Доп. функция 2</label>
-						</p>
-						<p class="login__remember">
-							<input type="checkbox" id="dop3" checked>
-							<label for="dop3">Доп. функция 3</label>
-						</p>
-						<p class="login__btn">
-							<button class="btn btn--center btn--accent">База данных</button>
-						</p>
-						<p class="login__btn">
-							<button class="btn btn--center btn--accent">Сохранить</button>
-						</p>
-						<p>
-							Еще нет аккаунта? <a href="register.html">Зарегистрироваться</a>
-						</p>
+						</div>
+						<div class="section__form_btn">
+							<a href="#" class="btn btn--accent">База данных блока</a>
+						</div>
+						<div class="section__form_line">
+							<label>Доп. поле 1</label>
+							<p class="section__form_checkbox">
+								<input id="formCheckbox1" type="checkbox">
+								<label for="formCheckbox1">Доп. поле информация</label>
+							</p>
+						</div>
+						<div class="section__form_line">
+							<label>Доп. поле 2</label>
+							<p class="section__form_checkbox">
+								<input id="formCheckbox2" type="checkbox">
+								<label for="formCheckbox2">Доп. поле информация</label>
+							</p>
+						</div>
+						<div class="section__form_line">
+							<label>Доп. поле 3</label>
+							<p class="section__form_checkbox">
+								<input id="formCheckbox3" type="checkbox">
+								<label for="formCheckbox3">Доп. поле информация</label>
+							</p>
+						</div>
+						<div class="section__form_btn">
+							<button class="btn btn--accent">Сохранить</button>
+						</div>
 					</form>
 
 					<div class="section__footer">
@@ -171,7 +181,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</section>
 
