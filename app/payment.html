@@ -31,7 +31,8 @@
 					<span>adress@gmail com</span>
 				</a>
 				<ul>
-					<li><a href="#"><img src="img/header__logout.svg" alt=""> Выход</a></li>
+										<li><a href="#"><img src="img/header__logout.svg" alt=""> Выход</a></li>
+					<li><img src="img/wallet.svg" alt=""> <b>400</b></li>
 				</ul>
 			</div>
 
@@ -251,55 +252,28 @@
 				<input type="hidden" name="subject" value="Добавить елемент в слайдер">
 	
 				<div class="form__item">
-					<label for="formName" class="form__label">Имя*</label>
-					<input id="formName" type="text" name="name" placeholder="Имя" class="form__input _req">
-				</div>
-	
-				<div class="form__item">
-					<label for="formPhone" class="form__label">Телефон*</label>
-					<input id="formPhone" type="tel" name="phone" placeholder="Телефон" class="form__input _req">
-				</div>
-	
-				<div class="form__item">
-					<label for="formMail" class="form__label">Почта*</label>
-					<input id="formMail" type="email" name="mail" placeholder="Почта" class="form__input _req">
-				</div> 
-	
-				<div class="form__item">
-					<div class="form__label">Левша или правша?</div>
-					<div class="form__options">
-						<div class="form__options_item">
-							<input id="formRigth" type="radio" value="raight" name="hand" class="form__options_input" checked>
-							<label for="formRigth" class="form__options_label"><span>Правша</span></label>
-						</div>
-						<div class="form__options_item">
-							<input id="formLeft" type="radio" value="left" name="hand" class="form__options_input">
-							<label for="formLeft" class="form__options_label"><span>Левша</span></label>
-						</div>
-					</div>
-				</div>
-	
-				<div class="form__item">
-					<label for="formMessage" class="form__label">Сообщение</label>
-					<textarea name="message" id="formMessage" class="form__textarea"></textarea>
-				</div>
-	
-				<div class="form__item">
-					<div class="form__label">Возраст:</div>
-					<select name="age" id="formAge" class="form__select">
-						<option value="18" selected="selected">18</option>
-						<option value="25">25</option>
-						<option value="30">30</option>
-						<option value="50">50</option>
-					</select>
+					<label for="formName" class="form__label">Сумма*</label>
+					<input id="formName" type="number" name="name" placeholder="Сумма*" class="form__input _req">
 				</div>
 
 				<div class="form__item">
-					<div class="form__checkbox">
-						<input id="formAgreement" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
-						<label for="formAgreement" class="form__checkbox_label"><span>Персональные данные <a href="#">Файл</a></span></label>
+					<div class="form__label">Выбрать способ опалты</div>
+					<div class="form__options">
+						<div class="form__options_item">
+							<input id="formRigth1" type="radio" value="raight" name="hand" class="form__options_input" checked>
+							<label for="formRigth1" class="form__options_label"><span>Банковская карта</span></label>
+						</div>
+						<div class="form__options_item">
+							<input id="formRigth" type="radio" value="raight" name="hand" class="form__options_input" checked>
+							<label for="formRigth" class="form__options_label"><span>Киви</span></label>
+						</div>
+						<div class="form__options_item">
+							<input id="formLeft" type="radio" value="left" name="hand" class="form__options_input">
+							<label for="formLeft" class="form__options_label"><span>Яндекс</span></label>
+						</div>
 					</div>
 				</div>
+
 	
 				<div class="form__btn">
 					<button type="submit" class="btn form__btn_button" name="submit">Отправить</button>
